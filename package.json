@@ -11,11 +11,21 @@
   "dependencies": {
     "expo": "~48.0.11",
     "expo-status-bar": "~1.4.4",
+    "node-sass": "^8.0.0",
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "react-native-sass-transformer": "^2.0.0",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@tsconfig/react-native": "^2.0.3",
+    "@types/jest": "^29.5.0",
+    "@types/react": "^18.0.35",
+    "@types/react-native": "^0.71.5",
+    "@types/react-test-renderer": "^18.0.0",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^5.0.4"
   },
   "private": true
 }
