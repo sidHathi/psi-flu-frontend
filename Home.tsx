@@ -46,7 +46,7 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
           }
           if (!state.authenticated) {
               navigation.navigate('Login');
-  
+                 return
           }
   
           const fetchUser = async () => {

@@ -1,7 +1,7 @@
 import api from "./api";
 
 interface AggregatesApi {
-    getSymptoms: () => Promise<string[] | never>;
+    getTop4Trending: () => Promise<{symptom: string, count: number}[] | never>;
     getInfectedCount: () => Promise<number | never>;
     getTotalUserCount: () => Promise<number | never>;
     getNewInfectionsCount: () => Promise<number | never>;
@@ -9,19 +9,22 @@ interface AggregatesApi {
 }
 
 export default function aggregatesApi(): AggregatesApi {
-    const getSymptoms = async (): Promise<string[] | never> => {
-        return await api.request({
-            method: "GET",
-            url: "/aggregates/trending_symptoms",
-        }).then((res) => {
-            return res.data as string[];
-        }).catch(err => {
+    const getTop4Trending = async (): Promise<{symptom: string, count: number}[] | never> => {
+        try{
+            const res = await api.request({
+                method: "GET",
+                url: "/aggregates/four_trending_symptoms",
+            });
+            if (res) {
+                return res.data;
+            }
+        } catch (err) {
             return Promise.reject(err);
-        });
+        }
     };
 
     const getInfectedCount = async () : Promise<number | never> => {
-        return await api.request({
+        return api.request({
             method: "GET",
             url: "/aggregates/infected"
         }).then((res) => {
@@ -32,7 +35,7 @@ export default function aggregatesApi(): AggregatesApi {
     };
     
     const getTotalUserCount = async () : Promise<number | never> => {
-        return await api.request({
+        return api.request({
             method: "GET",
             url: "/aggregates/num_users"
         }).then((res) => {
@@ -43,7 +46,7 @@ export default function aggregatesApi(): AggregatesApi {
     };
 
     const getNewInfectionsCount = async () : Promise<number | never> => {
-        return await api.request({
+        return api.request({
             method: "GET",
             url: "/aggregates/new_infections"
         }).then((res) => {
@@ -65,7 +68,7 @@ export default function aggregatesApi(): AggregatesApi {
     };
 
     return {
-        getSymptoms,
+        getTop4Trending,
         getInfectedCount,
         getTotalUserCount,
         getNewInfectionsCount,
