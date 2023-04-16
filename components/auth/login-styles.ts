@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         boxShadow: "5px 5px 20px 2px rgba(0, 0, 0, 0.1)",
-        overflow: "visible"
+        overflow: "visible",
+        borderRadius: 24
     },
     loginHeader: {
         fontSize: 24,

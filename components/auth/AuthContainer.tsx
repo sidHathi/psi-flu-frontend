@@ -8,6 +8,7 @@ import { AuthContext } from "../../services/AuthContext";
 type RootStackParamList = {
     Login: undefined;
     Profile: undefined;
+    Home: undefined;
   };
 
 export default function AuthContainer(props: NativeStackScreenProps<RootStackParamList, 'Login'>): JSX.Element {
@@ -22,7 +23,7 @@ export default function AuthContainer(props: NativeStackScreenProps<RootStackPar
             if (!access) {
                 return;
             } else {
-                navigation.navigate('Profile');
+                navigation.navigate('Home');
             }
         }
 
@@ -36,7 +37,7 @@ export default function AuthContainer(props: NativeStackScreenProps<RootStackPar
             return;
         } else {
             dispatch({type: "login"});
-            navigation.navigate('Profile');
+            navigation.navigate('Home');
         }
     };
 

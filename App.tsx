@@ -14,6 +14,7 @@ import AuthContextProvider from './services/AuthContext';
 import EditForm from './components/EditForm/EditForm';
 import User from './types/user_resp';
 import GlobalStyles from './components/GlobalStyles';
+import HomeScreen from './Home';
 
 type RootStackParamList = {
   Login: undefined;
@@ -25,36 +26,6 @@ type RootStackParamList = {
 export default function App() {
 
   const Stack = createNativeStackNavigator();
-
-  const HomeScreen = ({ navigation }) => {
-
-    return (
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-
-          <Text style={styles.Text}>Home</Text>
-
-
-          <GraphComp open={true} />
-          <CommonSymptoms open={true} />
-          <AppBar open={true} navigation={navigation} />
-        </SafeAreaView>
-      </SafeAreaProvider>
-    );
-  };
-  const ProfileScreen = ({ navigation }) => {
-
-    return (
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <Text>This is my's profile</Text>
-          <AppBar open={true} navigation={navigation} />
-
-        </SafeAreaView>
-      </SafeAreaProvider>
-
-    )
-  };
 
   return (
     <AuthContextProvider>
@@ -69,7 +40,6 @@ export default function App() {
             
             }}
           >
-
               <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
               <Stack.Screen
                 name="Profile"

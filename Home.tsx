@@ -11,6 +11,7 @@ import { AuthContext } from './services/AuthContext';
 import User from './types/user_resp';
 import usersApi from './services/usersApi';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Button } from 'react-native-paper';
 
 type RootStackParamList = {
     Login: undefined;
@@ -56,6 +57,11 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
           fetchUser();
       }, [navigation, setUser, user, state]);
 
+
+      const openEdit = () => {
+          navigation.navigate('Edit', {user: user});
+      }
+
     return (
         <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
@@ -65,6 +71,14 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
 
             <GraphComp open={true} />
             <CommonSymptoms open={true} />
+            <View style={{width: '100%'}}>
+                <Button style={styles.editButton}
+                    onPress={() => {openEdit()}}>
+                    <Text style={{color: "white", fontWeight: 'bold'}}>
+                        Update Symptoms +
+                    </Text>
+                </Button>
+            </View>
             <AppBar open={true} navigation={navigation} />
         </SafeAreaView>
         </SafeAreaProvider>
@@ -88,11 +102,24 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
       alignSelf: 'flex-start'
     },
     HeaderBox: {
-  
       bottom: 0,
       alignItems: 'flex-start',
       height: 60
-    }
+    },
+    editButton: {
+        textAlign: 'center',
+        paddingLeft: 60,
+        paddingRight: 60,
+        marginLeft: 12,
+        marginRight: 12,
+        borderRadius: 30,
+        height: 40,
+        backgroundColor: '#A243E0',
+        fontWeight: 'bold',
+        fontSize: 10,
+        marginTop: 30,
+        width: 'auto'
+    },
   });
 
 export default HomeScreen;

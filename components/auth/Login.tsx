@@ -36,7 +36,7 @@ export default function Login(props: LoginProps) : JSX.Element {
     }
 
     return <View style={styles.loginContainer}>
-        <Card style={styles.loginCard}>
+        <Card style={[styles.loginCard, { shadowOpacity: 0.05 }]}>
             <Text style={styles.loginHeader}>
                 Log In
             </Text>
