@@ -1,4 +1,6 @@
 {
+  "name": "PsiFlu",
+  "displayName": "PsiFlu",
   "expo": {
     "name": "PsiFlu",
     "slug": "PsiFlu",
@@ -15,7 +17,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": "Yes"
+        },
+        "NSAllowsArbitraryLoads": "Yes"
+      }
     },
     "android": {
       "adaptiveIcon": {
