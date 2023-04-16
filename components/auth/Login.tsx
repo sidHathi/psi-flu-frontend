@@ -36,7 +36,7 @@ export default function Login(props: LoginProps) : JSX.Element {
     }
 
     return <View style={styles.loginContainer}>
-        <Card style={styles.loginCard}>
+        <Card style={[styles.loginCard, { shadowOpacity: 0.05 }]}>
             <Text style={styles.loginHeader}>
                 Log In
             </Text>
@@ -49,6 +49,7 @@ export default function Login(props: LoginProps) : JSX.Element {
                 autoCapitalize='none'
                 autoComplete='email'
                 placeholder="email"
+                underlineColor='transparent'
             />
             <TextInput
                 style={styles.authInput}
@@ -57,6 +58,7 @@ export default function Login(props: LoginProps) : JSX.Element {
                 keyboardType='visible-password'
                 secureTextEntry
                 placeholder="password"
+                underlineColor='transparent'
             />
 
             <Button
