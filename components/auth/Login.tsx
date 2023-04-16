@@ -49,6 +49,7 @@ export default function Login(props: LoginProps) : JSX.Element {
                 autoCapitalize='none'
                 autoComplete='email'
                 placeholder="email"
+                underlineColor='transparent'
             />
             <TextInput
                 style={styles.authInput}
@@ -57,6 +58,7 @@ export default function Login(props: LoginProps) : JSX.Element {
                 keyboardType='visible-password'
                 secureTextEntry
                 placeholder="password"
+                underlineColor='transparent'
             />
 
             <Button

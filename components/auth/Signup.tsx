@@ -42,7 +42,7 @@ export default function Signup(props: SignupProps): JSX.Element {
     }
 
     return <View style={styles.loginContainer}>
-        <Card style={styles.loginCard}>
+        <Card style={[styles.loginCard, { shadowOpacity: 0.05 }]}>
             <Text style={styles.loginHeader}>
                 Sign up
             </Text>
@@ -55,6 +55,7 @@ export default function Signup(props: SignupProps): JSX.Element {
                 autoCapitalize='none'
                 autoComplete='email'
                 placeholder="email"
+                underlineColor='transparent'
             />
             <TextInput
                 style={styles.authInput}
@@ -63,6 +64,7 @@ export default function Signup(props: SignupProps): JSX.Element {
                 keyboardType='visible-password'
                 secureTextEntry
                 placeholder="password"
+                underlineColor='transparent'
             />
             <TextInput
                 style={styles.authInput}
@@ -71,6 +73,7 @@ export default function Signup(props: SignupProps): JSX.Element {
                 keyboardType='visible-password'
                 secureTextEntry
                 placeholder="confirm password"
+                underlineColor='transparent'
             />
 
             <Button

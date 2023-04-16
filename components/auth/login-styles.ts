@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
         marginBottom: 'auto',
         marginLeft: 10,
         marginRight: 10,
-        boxShadow: "5px 5px 20px 2px rgba(0, 0, 0, 0.1)",
         overflow: "visible",
         borderRadius: 24
     },
