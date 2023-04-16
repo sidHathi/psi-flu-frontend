@@ -23,15 +23,20 @@ export const GraphComp = ({ open }: GraphCompProps) => {
     backgroundColor: '#FFFFFF',
     backgroundGradientFrom: '#FFFFFF',
     backgroundGradientTo: '#FFFFFF',
+    backgroundGradientToOpacity: 0,
     color: (opacity = 1) => `rgba(176, 28, 199, ${opacity})`,
+    decimalPlaces: 0,
     style: {
       borderRadius: 24
-    }
+    },
+    
   }
 
   const graphStyle = {
     // marginVertical: 8,
-    ...chartConfig.style
+    ...chartConfig.style,
+    // marginHorizontal: 0,
+    marginRight: 10
   }
 
   
@@ -48,24 +53,6 @@ export const GraphComp = ({ open }: GraphCompProps) => {
         100
       ],
       color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})` // optional
-    },{
-      data: [
-        20,
-        10,
-        4,
-        56,
-        87,
-        90
-      ]
-    },{
-      data: [
-        30,
-        90,
-        67,
-        54,
-        10,
-        2
-      ]
     }]
   }
   // useEffect(() => {
@@ -93,11 +80,12 @@ export const GraphComp = ({ open }: GraphCompProps) => {
           <View style={styles.graphBox}>
             <LineChart
                 data={data}
-                width={200}
-                height={140}
+                width={210}
+                height={170}
                 chartConfig={chartConfig}
                 bezier
                 style={graphStyle}
+                
               />
             </View>
    

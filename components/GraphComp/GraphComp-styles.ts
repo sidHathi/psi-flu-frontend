@@ -28,7 +28,7 @@ const styles = StyleSheet.create ({
       padding: 8,
       marginTop: 25,
       marginBottom: 25,
-      height: '20%',
+      height: '25%',
       width: '90%',
       // alignItems: 'center',
       // justifyContent: 'center',
@@ -55,7 +55,8 @@ const styles = StyleSheet.create ({
       
     },
     graphBox: {
-      alignItems: 'center',
+      alignItems: 'flex-start',
+      // marginTop: -5
     },
     symptomGrid: {
       width:'35%',
@@ -63,7 +64,7 @@ const styles = StyleSheet.create ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
-      paddingTop: 5,
+      paddingTop: 25,
       
     },
     textWrapper: {
