@@ -14,10 +14,12 @@ const styles = StyleSheet.create ({
   LeftAction: {
     position: 'absolute',
     right: '55%',
+    paddingBottom: 10
   },
   RightAction: {
     position: 'absolute',
     left: '55%',
+    paddingBottom: 10
   },
 })
 

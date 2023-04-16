@@ -2,7 +2,7 @@ export interface CommonSymptom {
   symptom: string,
   count: number
 };
-export interface RootStackParamList {
+export type RootStackParamList = {
   Home: string;
   Profile: string;
   

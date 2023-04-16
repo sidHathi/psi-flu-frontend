@@ -35,8 +35,8 @@ export const AppBar = ({ open, navigation }: AppBarProps) => {
         elevated={true}
       
       >
-        <Appbar.Action icon="home" size={30} onPress={() => {navigation.navigate('Home')}} style={styles.LeftAction}/>
-        <Appbar.Action icon="account-circle" size={30} onPress={() => {navigation.navigate('Profile')}} style={styles.RightAction}/>
+        <Appbar.Action icon="home" size={40} onPress={() => {navigation.navigate('Home')}} style={styles.LeftAction}/>
+        <Appbar.Action icon="account-circle" size={40} onPress={() => {navigation.navigate('Profile')}} style={styles.RightAction}/>
       
       </Appbar>
   )
