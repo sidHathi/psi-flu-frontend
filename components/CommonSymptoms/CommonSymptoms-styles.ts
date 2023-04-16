@@ -19,9 +19,9 @@ const styles = StyleSheet.create ({
     countText: {
       ...GlobalStyles.Text,
         color: '#000000',
-        fontSize: 14,
+        fontSize: 12,
         flexWrap: 'nowrap',
-        paddingTop: 8,
+        paddingTop: 6,
     },
     surface: {
       padding: 8,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create ({
 
     },
     symptomBox: {
-      width:'90%',
+      width:'100%',
       height: '70%',
       paddingLeft: 18,
       // paddingRight: 18,
@@ -59,14 +59,14 @@ const styles = StyleSheet.create ({
       alignItems: 'center',
     },
     iconBox: {
-      paddingTop: 10,
+      paddingTop: 8,
     },
     textWrapper: {
       display:'flex',
       paddingLeft: 5,
       flexDirection: 'column',
       alignItems:'flex-start',
-      justifyContent: 'space-around'
+      justifyContent: 'space-between'
     }
 })
 export default styles
