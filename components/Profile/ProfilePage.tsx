@@ -7,6 +7,7 @@ import { View, Text } from "react-native";
 import styles from "./profile-styles";
 import { logout } from "../../services";
 import { Button } from "react-native-paper";
+import { AppBar } from "../AppBar/AppBar";
 
 type RootStackParamList = {
     Login: undefined;
@@ -38,7 +39,7 @@ export default function ProfilePage(props: NativeStackScreenProps<RootStackParam
     }, [navigation, setUser, user]);
 
 
-    return <View style={styles.profileContainer}>
+    return <><View style={styles.profileContainer}>
         <>
         {user !== undefined &&
             (<Text>
@@ -53,4 +54,5 @@ export default function ProfilePage(props: NativeStackScreenProps<RootStackParam
         }}>log out</Button>
         </>
     </View>
+    <AppBar open={true} navigation={navigation}/></>
 }
