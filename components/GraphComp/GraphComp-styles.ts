@@ -14,18 +14,21 @@ const styles = StyleSheet.create ({
     symptomText: {
       ...GlobalStyles.Text,
         color: '#000000',
-        fontSize: 12,
+        fontSize: 11,
     },
     countText: {
       ...GlobalStyles.Text,
         color: '#000000',
-        fontSize: 18,
+        fontSize: 38,
         flexWrap: 'nowrap',
-        paddingTop: 6,
+        paddingTop: 2,
     },
+    
     surface: {
       padding: 8,
-      height: '30%',
+      marginTop: 25,
+      marginBottom: 25,
+      height: '20%',
       width: '90%',
       // alignItems: 'center',
       // justifyContent: 'center',
@@ -41,32 +44,35 @@ const styles = StyleSheet.create ({
     },
     symptomBox: {
       width:'100%',
-      height: '80%',
+      height: '100%',
       paddingLeft: 18,
       // paddingRight: 18,
-      // paddingTop: 8,
+      paddingTop: 4,
       display: 'flex',
       flexDirection: 'row',
-      flexWrap: 'wrap',
+      // flexWrap: 'wrap',
       justifyContent: 'space-between',
       
     },
-    symptomGrid: {
-      width:'50%',
-      height: '50%',
-      display: 'flex',
-      flexDirection: 'row',
+    graphBox: {
       alignItems: 'center',
     },
-    iconBox: {
-      paddingTop: 4,
+    symptomGrid: {
+      width:'35%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      paddingTop: 5,
+      
     },
     textWrapper: {
       display:'flex',
-      paddingLeft: 6,
+      paddingLeft: 5,
       flexDirection: 'column',
       alignItems:'flex-start',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      paddingBottom: 5,
     }
 })
 export default styles

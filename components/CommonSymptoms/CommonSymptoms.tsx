@@ -7,6 +7,7 @@ import { SymptomIcon } from '../SymptomIcon/SymptomIcon';
 import { useState, useEffect } from 'react';
 import { CommonSymptom } from '../../types';
 import strings from '../../strings';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 interface CommonSymptomsProps {
 
@@ -29,6 +30,7 @@ export const CommonSymptoms = ({ open }: CommonSymptomsProps) => {
   }, []);
 
   return (
+    
     <Card style={[styles.surface, { shadowOpacity: 0.05 }]} elevation={2}>
       <View style={styles.header}>
         <Text style={styles.Text}>Common Symptoms</Text>
