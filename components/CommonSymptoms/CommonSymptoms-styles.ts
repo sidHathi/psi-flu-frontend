@@ -11,9 +11,21 @@ const styles = StyleSheet.create ({
         paddingTop: 20,
         paddingLeft: 16,
     },
+    symptomText: {
+      ...GlobalStyles.Text,
+        color: '#000000',
+        fontSize: 10,
+    },
+    countText: {
+      ...GlobalStyles.Text,
+        color: '#000000',
+        fontSize: 12,
+        flexWrap: 'nowrap',
+        paddingTop: 6,
+    },
     surface: {
       padding: 8,
-      height: '25%',
+      height: '35%',
       width: '90%',
       // alignItems: 'center',
       // justifyContent: 'center',
@@ -29,7 +41,32 @@ const styles = StyleSheet.create ({
     },
     symptomBox: {
       width:'100%',
-      height: '100%'
+      height: '70%',
+      paddingLeft: 18,
+      // paddingRight: 18,
+      paddingTop: 8,
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      
+    },
+    symptomGrid: {
+      width:'50%',
+      height: '50%',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    iconBox: {
+      paddingTop: 8,
+    },
+    textWrapper: {
+      display:'flex',
+      paddingLeft: 5,
+      flexDirection: 'column',
+      alignItems:'flex-start',
+      justifyContent: 'space-between'
     }
 })
 export default styles
