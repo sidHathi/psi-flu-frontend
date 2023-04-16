@@ -12,6 +12,7 @@ import User from './types/user_resp';
 import usersApi from './services/usersApi';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Button } from 'react-native-paper';
+import aggregatesApi from './services/aggregatesApi';
 
 type RootStackParamList = {
     Login: undefined;
@@ -24,6 +25,8 @@ type RootStackParamList = {
 const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, 'Profile'>) => {
     const { state, dispatch } = useContext(AuthContext);
     const [user, setUser] = useState<User | undefined>(undefined);
+
+    // to use api -> call await aggregatesApi().method similar to how usersApi is used in this file
 
     useEffect(() => {
         const checkAccess = async () => {
