@@ -42,7 +42,7 @@ export default function ProfilePage(props: NativeStackScreenProps<RootStackParam
         }
         if (!state.authenticated) {
             navigation.navigate('Login');
-
+            return;
         }
 
         const fetchUser = async () => {

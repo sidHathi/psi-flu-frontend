@@ -5,5 +5,4 @@ export interface CommonSymptom {
 export type RootStackParamList = {
   Home: string;
   Profile: string;
-  
 };
