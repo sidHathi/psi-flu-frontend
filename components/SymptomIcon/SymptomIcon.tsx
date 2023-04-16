@@ -17,7 +17,7 @@ export const SymptomIcon = ({ icon }: SymptomIconProps) => {
       <Image source={require('../../icons/abdominal-pain-icon.png')} style={{width: 35, height: 35}}/>
     )
   }
-  else if (icon === 'cheat') {
+  else if (icon === 'chest') {
     return (
       <Image source={require('../../icons/chest-pain-icon.png')} style={{width: 35, height: 35}}/>
     )
@@ -37,7 +37,7 @@ export const SymptomIcon = ({ icon }: SymptomIconProps) => {
       <Image source={require('../../icons/eye-icon.png')} style={{width: 35, height: 35}}/>
     )
   }
-  else if (icon === 'full body') {
+  else if (icon === 'full_body') {
     return (
       <Image source={require('../../icons/full-body-icon.png')} style={{width: 35, height: 35}}/>
     )
@@ -47,7 +47,7 @@ export const SymptomIcon = ({ icon }: SymptomIconProps) => {
       <Image source={require('../../icons/mouth-icon.png')} style={{width: 35, height: 35}}/>
     )
   }
-  else if (icon === 'runny nose') {
+  else if (icon === 'runny_nose') {
     return (
       <Image source={require('../../icons/runny-nose-icon.png')} style={{width: 35, height: 35}}/>
     )
@@ -57,7 +57,7 @@ export const SymptomIcon = ({ icon }: SymptomIconProps) => {
       <Image source={require('../../icons/skin-icon.png')} style={{width: 35, height: 35}}/>
     )
   }
-  else if (icon === 'throat') {
+  else if (icon === 'sore_throat') {
     return (
       <Image source={require('../../icons/throat-icon.png')} style={{width: 35, height: 35}}/>
     )
