@@ -49,10 +49,8 @@ export default function ProfilePage(props: NativeStackScreenProps<RootStackParam
             try {
                 setUser(await usersApi().getMe());
             } catch (err) {
-                if (('code' in err && err.code === 401) || err === 401) {
-                    navigation.navigate('Login');
-                    dispatch({type: 'logout'});
-                }
+                navigation.navigate('Login');
+                dispatch({type: 'logout'});
             }
         };
         fetchUser();
