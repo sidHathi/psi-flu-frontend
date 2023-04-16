@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { CommonSymptoms } from './components/CommonSymptoms/CommonSymptoms';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import AuthContainer from './components/Auth/AuthContainer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,6 +13,7 @@ import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-
 import AuthContextProvider from './services/AuthContext';
 import EditForm from './components/EditForm/EditForm';
 import User from './types/user_resp';
+import GlobalStyles from './components/GlobalStyles';
 
 type RootStackParamList = {
   Login: undefined;
@@ -26,25 +27,29 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   const HomeScreen = ({ navigation }) => {
-   
+
     return (
       <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
-          <GraphComp open={true}/>
+
+          <Text style={styles.Text}>Home</Text>
+
+
+          <GraphComp open={true} />
           <CommonSymptoms open={true} />
-          <AppBar open={true} navigation={navigation}/>
+          <AppBar open={true} navigation={navigation} />
         </SafeAreaView>
       </SafeAreaProvider>
     );
   };
-  const ProfileScreen = ({navigation }) => {
-  
+  const ProfileScreen = ({ navigation }) => {
+
     return (
       <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
           <Text>This is my's profile</Text>
-          <AppBar open={true} navigation={navigation}/>
-          
+          <AppBar open={true} navigation={navigation} />
+
         </SafeAreaView>
       </SafeAreaProvider>
 
@@ -98,5 +103,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  Text: {
+    ...GlobalStyles.Text,
+    color: '#000000',
+    fontSize: 38,
+    paddingTop: 40,
+    paddingLeft: 30,
+    alignSelf: 'flex-start'
+  },
+  HeaderBox: {
+
+    bottom: 0,
+    alignItems: 'flex-start',
+    height: 60
+  }
 });
 
