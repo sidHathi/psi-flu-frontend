@@ -5,11 +5,11 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as SecureStore from 'expo-secure-store';
 
 type RootStackParamList = {
+    Login: undefined;
     Profile: undefined;
-    Home: undefined;
   };
 
-export default function AuthContainer(props: NativeStackScreenProps<RootStackParamList, 'Profile'>): JSX.Element {
+export default function AuthContainer(props: NativeStackScreenProps<RootStackParamList, 'Login'>): JSX.Element {
     const [signUp, setSignUp] = useState(false);
     const { route, navigation } = props;
 
@@ -20,7 +20,7 @@ export default function AuthContainer(props: NativeStackScreenProps<RootStackPar
             if (!access) {
                 return;
             } else {
-                navigation.navigate('Home');
+                navigation.navigate('Profile');
             }
         }
 
@@ -33,7 +33,7 @@ export default function AuthContainer(props: NativeStackScreenProps<RootStackPar
         if (!access) {
             return;
         } else {
-            navigation.navigate('Home');
+            navigation.navigate('Profile');
         }
     };
 

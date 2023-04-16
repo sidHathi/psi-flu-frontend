@@ -14,11 +14,11 @@ export default function usersApi(): UsersApi {
             return Promise.reject(err);
         });
 
-        if (resp.status === 200) {
-            const user = resp.data as User;
+        if (resp.status === 200 && 'user' in resp.data) {
+            const user = resp.data.user as User;
             return user;
         }
-    }
+    };
 
     return {
         getMe
