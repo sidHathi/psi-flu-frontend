@@ -1,13 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { CommonSymptoms } from './components/CommonSymptoms/CommonSymptoms';
-import { AppBar } from './components/AppBar/AppBar';
-import { GraphComp } from './components/GraphComp/GraphComp';
-import * as React from 'react';
-import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import React, {useState, useEffect} from 'react';
+import AuthContainer from './components/Auth/AuthContainer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ProfilePage from './components/Profile/ProfilePage';
+const Stack = createNativeStackNavigator<RootStackParamList>();
+import { AppBar } from './components/AppBar/AppBar';
+import { GraphComp } from './components/GraphComp/GraphComp';
+import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
+type RootStackParamList = {
+  Login: undefined;
+  Profile: undefined;
+  Home: undefined;
+};
 
 
 export default function App() {
@@ -42,23 +50,29 @@ export default function App() {
   };
 
   return (
-
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
-        
-        screenOptions={{
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
-          animationTypeForReplace: 'pop',
-          fullScreenGestureEnabled: true,
-         
-        }}
-       
+          screenOptions={{
+            gestureEnabled: true,
+            gestureDirection: 'horizontal',
+            animationTypeForReplace: 'pop',
+            fullScreenGestureEnabled: true,
+          
+          }}
         >
 
             <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
-            <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
+            <Stack.Screen
+              name="Profile"
+              component={ProfilePage}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen 
+              name="Login" 
+              component={AuthContainer} 
+              options={{headerShown: false}}
+            />
 
         </Stack.Navigator>
         
