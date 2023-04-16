@@ -5,6 +5,7 @@ import { Button, Surface, Card } from 'react-native-paper'
 import theme from '../Theme'
 import { SymptomIcon } from '../SymptomIcon/SymptomIcon';
 import { useState, useEffect } from 'react';
+import { CommonSymptom } from '../../types'
 
 interface CommonSymptomsProps {
 
@@ -13,7 +14,7 @@ interface CommonSymptomsProps {
 
 export const CommonSymptoms = ({ open }: CommonSymptomsProps) => {
 
-  const [commonSymptoms, setCommonSymptoms] = useState([{}])
+  const [commonSymptoms, setCommonSymptoms] = useState<CommonSymptom[]>([])
 
   var mockdata = [
     {symptom: 'cough', count: 54},
@@ -32,12 +33,18 @@ export const CommonSymptoms = ({ open }: CommonSymptomsProps) => {
         <Text style={styles.Text}>Common Symptoms</Text>
       </View>
       <View style={styles.symptomBox}>
-        {/* {commonSymptoms.map((stat) => (
-          <View>
-            <SymptomIcon icon={stat.symptom} />
+        {commonSymptoms.map((stat) => (
+          <View key={stat.symptom} style={styles.symptomGrid}>
+            <View style={styles.iconBox}>
+              <SymptomIcon icon={stat.symptom}/>
+            </View>
+            <View style={styles.textWrapper}>
+              <Text style={styles.symptomText}>{stat.symptom}</Text>
+              <Text style={styles.countText}>{stat.count} People</Text>
+            </View>
           </View>
 
-        ))} */}
+        ))}
 
 
 
