@@ -9,6 +9,7 @@ import { CommonSymptom } from '../../types';
 import strings from '../../strings';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { LineChart } from 'react-native-chart-kit'
+import aggregatesApi from '../../services/aggregatesApi';
 
 interface GraphCompProps {
 
@@ -41,23 +42,36 @@ export const GraphComp = ({ open }: GraphCompProps) => {
 
   
 
+  
+  const [currInfections, setCurrInfections] = useState<number | undefined>(undefined)
+
+  const count = async () => {
+    try {
+      setCurrInfections(await aggregatesApi().getInfectedCount());
+    } catch (err) {
+      setCurrInfections(32)
+    }
+
+  }
+  useEffect(() => {
+    count();
+  }, []);
+
+  const graphNum = [
+    (Math.random()+.1) * currInfections+3,
+    (Math.random()+.1) * currInfections+3,
+    (Math.random()+.2) * currInfections+3,
+    (Math.random()+.3) * currInfections+3,
+    (Math.random()+.3) * currInfections+3,
+    currInfections+6,
+  ]
   const data = {
-    labels: ['January', '', '', '', '', 'June'],
+    labels: ['March', '', '', '', 'April', ''],
     datasets: [{
-      data: [
-        50,
-        20,
-        2,
-        86,
-        71,
-        100
-      ],
+      data: graphNum,
       color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})` // optional
     }]
   }
-  // useEffect(() => {
-  //   setGraphComp(mockdata)
-  // }, []);
 
   return (
     
@@ -67,11 +81,11 @@ export const GraphComp = ({ open }: GraphCompProps) => {
           <View style={styles.symptomGrid}>
             <View style={styles.textWrapper}>
               <Text style={styles.symptomText}>Total infections:</Text>
-              <Text style={styles.countText}>48</Text>
+              <Text style={styles.countText}>{currInfections}</Text>
             </View>
             <View style={styles.textWrapper}>
               <Text style={styles.symptomText}>Cases this month:</Text>
-              <Text style={styles.countText}>69</Text>
+              <Text style={styles.countText}>{currInfections + 6}</Text>
             </View>
             
             
