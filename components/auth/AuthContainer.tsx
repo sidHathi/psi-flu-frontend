@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Signup from "./Signup";
 import Login from './Login';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as SecureStore from 'expo-secure-store';
+import { AuthContext } from "../../services/AuthContext";
 
 type RootStackParamList = {
     Login: undefined;
@@ -12,6 +13,7 @@ type RootStackParamList = {
 export default function AuthContainer(props: NativeStackScreenProps<RootStackParamList, 'Login'>): JSX.Element {
     const [signUp, setSignUp] = useState(false);
     const { route, navigation } = props;
+    const { state, dispatch } = useContext(AuthContext);
 
     useEffect(() => {
         const checkAccess = async () => {
@@ -33,6 +35,7 @@ export default function AuthContainer(props: NativeStackScreenProps<RootStackPar
         if (!access) {
             return;
         } else {
+            dispatch({type: "login"});
             navigation.navigate('Profile');
         }
     };
